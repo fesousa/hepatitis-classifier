@@ -1,0 +1,74 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: API para classificar hepatite
+
+Resources:
+  S3BucketEntrega:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      BucketName: hepatite-classifier-fernando-sousa # nome do bucket
+      WebsiteConfiguration:
+        IndexDocument: index.html # arquivo index da aplicação
+  # Política de acesso ao Bucket, para poder acessar de qualquer lugar
+  BucketEntregaPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3BucketEntrega
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action:
+              - 's3:GetObject'
+            Effect: Allow
+            Resource: !Join
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref S3BucketEntrega  
+                - /*
+            Principal: '*'
+            Sid: 'PublicReadGetObject'
+  ApiGatewayClassifier:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: classifier
+      OpenApiVersion: '2.0'
+      Cors:
+        AllowMethods: "'POST, GET, OPTIONS'"
+        AllowHeaders: "'Content-Type, Accept, Access-Control-Allow-Headers, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Allow-Origin'"
+        AllowOrigin: "'*'"
+  # Função lambda para executar o código da API
+  LambdaClassifier:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: classify-hepatitis-api #nome da função
+      Handler: main.execute # nome do arquivo e método de onde está a função
+      Runtime: python3.9 # ambiente de execução
+      CodeUri: ./api # local onde estarão os arquivos da função
+      Description: API classificar hepatite
+      MemorySize: 4096 # memória utilizada pela funçãop
+      Timeout: 30 # tempo máximo de execução, em segundos
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/LabRole # IAM role da função para permissões a outros recursos da AWS
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /classify
+            Method: post
+            RestApiId:
+              Ref: ApiGatewayClassifier
+  
+
+Outputs:
+  WebsiteURL:
+    Value: !GetAtt
+      - S3BucketEntrega 
+      - WebsiteURL
+    Description: URL do site no S3
+  APIGatewayURL:
+    Description: URL das APIs
+    Value: !Sub "https://${ApiGatewayClassifier}.execute-api.${AWS::Region}.amazonaws.com/classifier/"

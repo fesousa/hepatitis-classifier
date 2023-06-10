@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Classificação Doadores de Sangue</title>
+    <!-- Inclusão do jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.42556&themeRevisionID=63e6805f64383509e31513f4"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.42556" />
+    <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.42556" />
+  </head>
+  <body>
+   
+    <div role="main" class="form-all">
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 id="header_1" class="form-header" data-component="header">Classificador de Doador de Sangue</h1>
+          </div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-1" data-type="control_textbox" id="id_27"><label class="form-label form-label-top" id="label_27" for="input_27"> Age </label>
+        <div id="cid_27" class="form-input-wide" data-layout="half"> <input type="text" id="input_27" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:314px" size="314" value="" data-component="textbox" aria-labelledby="label_27" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-2" data-type="control_textbox" id="id_28"><label class="form-label form-label-top" id="label_28" for="input_28"> ALB </label>
+        <div id="cid_28" class="form-input-wide" data-layout="half"> <input type="text" id="input_28" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_28" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-3" data-type="control_textbox" id="id_32"><label class="form-label form-label-top" id="label_32" for="input_32"> ALP </label>
+        <div id="cid_32" class="form-input-wide" data-layout="half"> <input type="text" id="input_32" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_32" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-4" data-type="control_textbox" id="id_33"><label class="form-label form-label-top" id="label_33" for="input_33"> ALT </label>
+        <div id="cid_33" class="form-input-wide" data-layout="half"> <input type="text" id="input_33" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_33" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-5" data-type="control_textbox" id="id_34"><label class="form-label form-label-top" id="label_34" for="input_34"> AST </label>
+        <div id="cid_34" class="form-input-wide" data-layout="half"> <input type="text" id="input_34" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_34" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-6" data-type="control_textbox" id="id_35"><label class="form-label form-label-top" id="label_35" for="input_35"> BIL </label>
+        <div id="cid_35" class="form-input-wide" data-layout="half"> <input type="text" id="input_35" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_35" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-7" data-type="control_textbox" id="id_36"><label class="form-label form-label-top" id="label_36" for="input_36"> CHE </label>
+        <div id="cid_36" class="form-input-wide" data-layout="half"> <input type="text" id="input_36" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_36" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-8" data-type="control_textbox" id="id_42"><label class="form-label form-label-top" id="label_42" for="input_42"> CHOL </label>
+        <div id="cid_42" class="form-input-wide" data-layout="half"> <input type="text" id="input_42" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_42" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-9" data-type="control_textbox" id="id_41"><label class="form-label form-label-top" id="label_41" for="input_41"> CREA </label>
+        <div id="cid_41" class="form-input-wide" data-layout="half"> <input type="text" id="input_41" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_41" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-10" data-type="control_textbox" id="id_40"><label class="form-label form-label-top" id="label_40" for="input_40"> GGT </label>
+        <div id="cid_40" class="form-input-wide" data-layout="half"> <input type="text" id="input_40" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_40" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-11" data-type="control_textbox" id="id_37"><label class="form-label form-label-top" id="label_37" for="input_37"> PROT </label>
+        <div id="cid_37" class="form-input-wide" data-layout="half"> <input type="text" id="input_37" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_37" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-12" data-type="control_textbox" id="id_39"><label class="form-label form-label-top" id="label_39" for="input_39"> Sex </label>
+        <div id="cid_39" class="form-input-wide" data-layout="half"> <input type="text" id="sex" name="data[]" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_39" /> </div>
+      </li>
+      <li class="form-line form-line-column form-col-13" data-type="control_button" id="id_26">
+        <div id="cid_26" class="form-input-wide" data-layout="full">
+          <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><button id="gerar" type="submit" class="form-submit-button form-submit-button-blue-400 submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Automatico</button></div>
+        </div>
+      </li>
+      <li class="form-line form-line-column form-col-14" data-type="control_button" id="id_9">
+        <div id="cid_9" class="form-input-wide" data-layout="full">
+          <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><button id="enviar" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Gerar dados e Enviar</button></div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_text" id="id_44">
+        <div id="cid_44" class="form-input-wide" data-layout="full">
+          <div id="text_44" class="form-html" data-component="text" tabindex="0">
+            <p id="result"></p>
+          </div>
+        </div>
+      </li>
+      <li style="clear:both"></li>
+      
+    </ul>
+  </div>
+    <script type="text/javascript">
+
+      function generate(){
+        $('input[name^="data"]').each(function() {
+          $(this).val(Math.random());
+        });
+        $("#sex").val(Math.round(Math.random()));
+        var lista = [];
+        $('input[name^="data"]').each(function() {
+          lista.push(parseFloat($(this).val()))
+        });
+        return lista
+      }
+      function classify(lista){
+        var data = $.ajax({
+              // trocar pela URL do API ateway
+              url: 'https://kpjq0rex9g.execute-api.us-east-1.amazonaws.com/classifier/classify',
+              type: 'POST',
+              data: JSON.stringify({ data: lista }),
+              contentType: "application/json; charset=utf-8",
+              dataType: 'JSON',
+              success: function(response) {
+                  if (response[0] == 1) {
+                    $("#result").append("Não doador<br/>")
+                  } else {
+                    $("#result").append("Doador<br/>")
+                  }                  
+                
+              }
+          });      
+      }
+
+
+      $( "#gerar" ).on( "click", function() {
+        lista = generate()
+        classify(lista)
+        setInterval(function() {                
+          lista = generate()
+          classify(lista)
+        }, 2000);
+
+       
+        
+      } );
+
+      $( "#enviar" ).on( "click", function() {
+        
+        $("#result").html("Classificando....")
+
+        $('input[name^="data"]').each(function() {
+          $(this).val(Math.random());
+        });
+        $("#sex").val(Math.round(Math.random()));
+        var lista = [];
+        $('input[name^="data"]').each(function() {
+          lista.push(parseFloat($(this).val()))
+        });
+       
+        var data = $.ajax({
+            // trocar pela URL do API ateway
+            url: 'https://kpjq0rex9g.execute-api.us-east-1.amazonaws.com/classifier/classify',
+            type: 'POST',
+            data: JSON.stringify({ data: lista }),
+            contentType: "application/json; charset=utf-8",
+            dataType: 'JSON',
+            success: function(response) {
+                if (response[0] == 1) {
+                  $("#result").html("Não doador")
+                } else {
+                  $("#result").html("Doador")
+                }
+              
+            }
+        });      
+      });
+    
+      
+      // Executar chamada para a API
+      // var data = $.ajax({
+      //     // trocar pela URL do API ateway
+      //     url: '	https://ip4yxscp5b.execute-api.us-east-1.amazonaws.com/prod/',
+      //     type: 'GET',
+      //     dataType: 'JSON',
+      //     success: function(response) {
+      //         // grafico de UF
+             
+      //     }
+      // });      
+    </script>
+  </body>
+</html>
